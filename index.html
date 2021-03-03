@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript for beginners</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class ="header">
+        <div class="header-inner">
+            <h1>JavaScript for beginners</h1>
+            <div id="names" class="header-name"></div>
+        </div>
+    </header>
+    <section class="info">
+        <div class="info-inner">
+            <div class="info-text">
+                <p class="text">
+                    Здесь вы можете изучить JavaScript с нуля. JavaScript - это мультипарадигменный язык 
+                    программирования, поддерживающий ООП. Обычно используется в браузерах, для 
+                    добавления интерактивности веб-страницам, то есть позволяет применять сложные вещи на 
+                    веб-странице тогда, когда на ней происходит что-то еще, кроме статичного отображения:</p>
+
+                    <li class = "text">Периодически обновляемый контент</li>
+                    <li class = "text">2D, 3D графика, анимация</li>
+                    <li class = "text">Видеопроигрыватель</li>
+
+                    <p class="text">HTML - первый слой, язык разметки нашей страницы, CSS - второй, добавляет нашей странице 
+                    стиль и наконец третий слой, это JavaScript. Создает динамически обновляемый контент, 
+                    мультимедиа вашей страницы</p>
+            </div>
+        </div>
+    </section>
+    <section class="learn">
+        <div class="learn-inner">
+            <div class="head-title">
+                <h2>Ознакомиться с JS:</h2>
+            </div>
+            <div class="menu">
+                <dialog id="hellowindow">
+                    <div class="hello-inner">
+                        <h2>Приветствие</h2>
+                        <div class="hello-body">
+                            <div class="hello-title">
+                                Представьтесь пожалуйста:
+                            </div>
+                            <div class="hello-forms">
+                                <input id="name" class="inputs input-name" type="text" placeholder="Имя" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="validate-name" id="validate-name">Поле не должно быть пустым и содержать цифр!</div>
+                        
+                        <div id="hide-div" class="hide-div">
+                            Ваше имя отобразится справа, в шапке сайта. <br> <br>
+                            Краткое описание: <br>
+                            В данной задаче я использовал 1 функцию, в которой переменной присваивал значение инпута:  <br> var name = document.getElementById('name').value; <br> После, создал
+                            создал переменную, куда присвоил наше имя и текст: <br> var say = 'Приветствую, ' + name; <br>Создал пустой div в шапке сайта и передал туда нашу переменную: <br>
+                            document.getElementById('names').innerHTML = say;<br>
+                            
+                        </div>
+                        <div class="buttons">
+                            <a onclick="say()" href="#~">Отправить</a>
+                            <a onclick='closeWindow("hellowindow")' href="#~">Понятно</a>
+                        </div>
+                        
+                    </div>
+
+                </dialog>
+                <dialog id = "trianglewindow">
+                    <div class="hello-inner">
+                        <h2>Площадь треугольника</h2>
+                        <div class="hello-body">
+                            <div class="triangle-form">
+                                <div class="hello-title">
+                                    Введи основание треугольника:
+                                </div>
+                                <div class="hello-forms">
+                                    <input id="base" class="inputs input-name" type="text" placeholder="Основание" maxlength="5">
+                                </div>
+                            </div>
+                            <div class="triangle-form">
+                                <div class="hello-title">
+                                    Введи высоту треугольника:
+                                </div>
+                                <div class="hello-forms">
+                                    <input id="height" class="inputs input-name" type="text" placeholder="Высота" maxlength="5">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="validate-name" id="validate-triangle">Поля не должны содержать букв и символов!</div>
+                        <div class="hello-title" id="triangle-res"> </div>
+                        <div id="hide-div-triangle" class="hide-div">
+                            Краткое описание: <br>
+                            В данной задаче я использовал 1 функцию, в которой создал переменные и присвоил им значение инпутов:  <br> let base = document.getElementById('base').value; <br>
+                            let height = document.getElementById('height').value; <br> 
+                            После, рассчитал результат и записал в финальную переменную для передачи в div: <br>
+                            let res = 0.5*base*height;<br>
+                            let resultat = 'Площадь треугольника: ' + res; <br>
+                            Сама передача в div: <br>
+                            document.getElementById('triangle-res').innerHTML = resultat;   
+                        </div>
+                        <div class="buttons">
+                            <a onclick='square()' href="#~">Рассчитать</a>
+                            <a onclick='closeWindow("trianglewindow")' href="#~">Понятно</a>
+                        </div>
+                        
+                    </div>
+                </dialog>
+                <dialog id = "stringwindow">
+                    <div class="hello-inner">
+                        <h2>Строки</h2>
+                        <div class="hello-body">
+                            <div class="string-form">
+                                <div class="hello-title">
+                                    Введи первую строку:
+                                </div>
+                                <div class="string-forms">
+                                    <input id="firststr" class="inputs input-name" type="text" placeholder="Строка 1" maxlength="10">
+                                </div>
+                            </div>
+                            <div class="triangle-form">
+                                <div class="hello-title">
+                                    Введи вторую строку:
+                                </div>
+                                <div class="hello-forms">
+                                    <input id="secondstr" class="inputs input-name" type="text" placeholder="Строка 2" maxlength="10">
+                                </div>
+                            </div>
+                            <div class="validate-name" id="validate-string">Поля не должны быть пустыми!</div>
+                        </div>
+                        <div class="hello-title" id="string-res"> </div>
+                        <div id="hide-div-string" class="hide-div">
+                            Краткое описание: <br>
+                            В данной задаче я использовал 1 функцию, в которой создал переменные и присвоил им значение инпутов:  <br> let first = document.getElementById('firststr').value;<br>
+                            let second = document.getElementById('secondstr').value; <br> 
+                            После, с помощью оператора if сравнил длину двух строк: <br>
+                            if(first.length === second.length) <br>
+                            И передал true если кол-во символов одинаковое и false если разное <br>  
+                        </div>
+                        <div class="buttons">
+                            <a onclick='check()' href="#~">Проверить</a>
+                            <a onclick='closeWindow("stringwindow")' href="#~">Понятно</a>
+                        </div>
+                        
+                    </div>
+                </dialog>
+                <dialog id = "arraywindow">
+                    <div class="hello-inner">
+                        <h2>Массивы</h2>
+                        <div class="hello-body">
+                            <div class="string-form">
+                                <div class="hello-title">
+                                    Заполни массив:
+                                </div>
+                                <div class="string-forms">
+                                    <input id="first-element" class="inputs input-array" type="text" placeholder="1" maxlength="5">
+                                    <input id="second-element" class="inputs input-array" type="text" placeholder="2" maxlength="5">
+                                    <input id="third-element" class="inputs input-array" type="text" placeholder="3" maxlength="5">
+                                    <input id="fourth-element" class="inputs input-array" type="text" placeholder="4" maxlength="5">
+                                    <input id="fifth-element" class="inputs input-array" type="text" placeholder="5" maxlength="5">
+                                </div>
+                                <div class="validate-name" id="validate-array">Введи числа!</div>
+                            </div>
+                        </div>
+                        <div class="hello-title" id="min-res"> </div>
+                        <div class="hello-title" id="max-res"> </div>
+                        <div id="hide-div-array" class="hide-div">
+                            Краткое описание: <br>
+                            В данной задаче я использовал 3 функции, одна функция будет заполнять массив значениями из инпутов, другие две - вычислять минимальное и максимальное значение. <br>
+                            Создаем массив в первой функции так: <br>
+                            let arr = new Array(); <br>
+                            или так: <br>
+                            let arr = []; <br>
+                            Значения массива нумеруются с 0, начинаем заполнять: <br>
+                            arr[0]=document.getElementById('first-element').value; <br>
+                            ... <br>
+                            arr[5]=document.getElementById('fifth-element').value; <br>
+                            Где first-element и fifth-element - id объекта, который указывается при разметке <br>
+                            После возвращаем массив: <br>
+                            return arr; <br>
+                            Две другие функции схожи друг с другом, получаем массив с первой функции и с помощью цикла получаем значения: <br>
+                            let arr= createArray(); <br>
+                            <p>for(i=0; iarr.length; i++)</p> <br>
+                            
+                        </div>
+                        <div class="buttons">
+                            <a onclick='minElementArray(); maxElementArray();' href="#~">Отправить</a>
+                            <a onclick='closeWindow("arraywindow")' href="#~">Понятно</a>
+                        </div>
+                        
+                    </div>
+                </dialog>
+                <dialog id = "timerwindow">
+                    <div class="hello-inner">
+                        <h2>Таймер</h2>
+                        <div class="hello-body">
+                            <div class="string-form">
+                                <div class="hello-title">
+                                    Введи начало отсчета (секунды):
+                                </div>
+                                <div class="string-forms">
+                                    <input id="start-time" class="inputs input-array" type="text" placeholder="1" maxlength="10">
+                                </div>
+                                <div class="validate-name" id="validate-timer">Поле должно содержать только цифры!</div>
+                            </div>
+                        </div>
+                        <div class="hello-title" id="time"> </div>
+                        
+                        <div id="hide-div-timer" class="hide-div">
+                            Краткое описание: <br>
+                            В данной задаче я использовал 4 функции, первая запускает основную функцию таймера, остальные две отвечают за паузу и рестарт. <br>
+                            В первой функции принял значение из инпута, привел к интовому значению и запустил основную функцию, передав туда значение: <br>
+                            function startTimer() <br>
+                            time = parseInt(time); <br>
+                            timers(time); <br>
+                            В основной функции timers с помощью setInterval задал срабатывание еще одной функции каждую секунду (в JS 1000): <br>
+                            timer = setInterval(function (){ <br> <br>
+                                ... <br> <br>
+                            }, 1000) <br>
+                            И в этой функции написал рассчет часов, минут и секунд, вывод на экран и уменьшение времени <b>--time;</b>
+                            
+                        </div>
+                        <div class="buttons">
+                            <a id="start-button" onclick='startTimer()' href="#~">Начать отсчет</a>
+                            <a onclick='pauseTimer()' id="pause" href="#~">Пауза</a>
+                            <a onclick='restartTimer()' href="#~">Сначала</a>
+                            <a onclick='closeWindow("timerwindow");pauseTimer();' href="#~">Понятно</a>
+                        </div>
+                        
+                    </div>
+                </dialog>
+                <dialog id = "testwindow">
+                    <div class="hello-inner">
+                        <h2>Тест</h2>
+                        <div class="hello-body">
+                            <div class="string-form">
+                                <div id="questions" class="hello-title">
+                                    
+                                </div>
+                                <div class="ans-forms">
+                                    <form name="f" action="">
+                                        <div class="answer-container"><input id="answer-forms" onclick="select()" type="radio" name="r" value="0"> <div class="hello-title title-answer" id="one-answer-text"></div> </div>
+                                        <div class="answer-container"><input id="answer-forms" onclick="select()" type="radio" name="r" value="1"> <div class="hello-title title-answer" id="two-answer-text"></div></div>
+                                        <div class="answer-container"><input id="answer-forms" onclick="select()" type="radio" name="r" value="2"> <div class="hello-title title-answer" id="three-answer-text"></div></div>
+                                    </form>
+                                    
+                                </div>
+                                <div class="validate-name" id="validate-timer">Поле должно содержать только цифры!</div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <a onclick='next()' href="#~">Далее</a>
+                            <a onclick='end()' href="#~">Отмена</a>
+                        </div>
+                        
+                    </div>
+                </dialog>
+                <dialog id="test-resultat">
+                    <div class="hello-inner">
+                        <h2>Результаты теста</h2>
+                        <div class="hello-body">
+                            <div class="string-form">
+                                <div id="text-resultats" class="hello-title">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <a onclick='closeWindow("test-resultat")' href="#~">Закрыть</a>
+                        </div>
+                        
+                    </div>
+                </dialog>
+                <div onclick="closeSplashScreen()" class="splash-screen" id="spsc">
+                    <div class="sp-container">
+                        <div class="text-sp" id="date"></div>
+                        <div class="text-sp" id="nameuser"></div>
+                    </div>
+
+                </div>
+                <ul>
+                    <li class="menu-button"><a onclick='openWindow("hellowindow")' href="#~">Приветствие</a></li>
+                    <li class="menu-button"><a onclick='openWindow("trianglewindow")' href="#~">Площадь треугольника</a></li>
+                    <li class="menu-button"><a onclick='openWindow("stringwindow")' href="#~">Строки</a></li>
+                    <li class="menu-button"><a onclick='openWindow("arraywindow")' href="#~">Массив</a></li>
+                    <li class="menu-button"><a onclick='openWindow("timerwindow")' href="#~">Таймер</a></li>
+                    <li class="menu-button"><a onclick='startTest()' href="#~">Тест</a></li>
+                    <li class="menu-button"><a onclick='startSplashScreen()'href="#~">Заставка</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="js/hello.js"></script>
+    <script src="js/triangle.js"></script>
+    <script src="js/strings.js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/splashScreen.js"></script>
+</body>
+</html>
